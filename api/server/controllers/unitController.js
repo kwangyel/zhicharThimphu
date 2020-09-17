@@ -1,5 +1,5 @@
 import unitService from '../services/unitService'
-import buildingService from '../services/buildingService'
+import structureService from '../services/structureService'
 import Util from '../utils/Utils'
 
 const util=new Util();
@@ -20,7 +20,7 @@ class unitController{
             return util.send(res)
         }catch(err){
             console.log(err)
-            util.setError(400,"Error")
+            util.setError(200,"Error")
             return util.send(res)
         }
     }
@@ -39,7 +39,7 @@ class unitController{
             return util.send(res)
         }catch(err){
             console.log(err)
-            util.setError(400,"Error")
+            util.setError(200,"Error")
             return util.send(res)
         }
         
@@ -49,17 +49,19 @@ class unitController{
         const data = req.body
         const building_id= req.body.building_id
         const unitNumber = req.body.unitNumber
+        const user_id = req.body.user_id
+
         util.setData(null)
 
-        if(!building_id || !unitNumber){
-            util.setError(400,"Building not set")
+        if(!building_id || !unitNumber  || !user_id){
+            util.setError(200,"Building not set")
             return util.send(res)
         }
 
         try{
-            const building = await buildingService.getABuilding(building_id)
+            const building = await structureService.getStructure(building_id)
             if(!building){
-               util.setError(400,"Building not valid") 
+               util.setError(200,"Building not valid") 
                return util.send(res)
             }
             const createunit = await unitService.createUnit(data)
@@ -72,7 +74,7 @@ class unitController{
             return util.send(res)
         }catch(err){
             console.log(err)
-            util.setError(400,"Error")
+            util.setError(200,"Error")
             return util.send(res)
         }
     }

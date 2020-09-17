@@ -51,7 +51,7 @@ class residentController{
             return util.send(res)
         }catch(err){
             console.log(err)
-            util.setError(400,"Error")
+            util.setError(200,"Error")
             return util.send(res)
         }
     }

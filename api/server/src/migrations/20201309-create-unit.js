@@ -8,30 +8,18 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      building_id:{
-        type: Sequelize.INTEGER
-      },
-      unitNumber:{
-        type: Sequelize.STRING
-      },
-      occupancyStatus:{
-          type: Sequelize.STRING
-      }, 
-      floorLevel:{
-        type: Sequelize.STRING
-      },
-      unitOwnership:{
-        type: Sequelize.STRING
-      },
-      rent:{
-        type: Sequelize.STRING
-      },
-      unitUse:{
-        type: Sequelize.STRING
-      },
-      remarks:{
-        type: Sequelize.STRING
-      },
+      building_id:{ type: Sequelize.INTEGER },
+      unitNumber:{ type: Sequelize.STRING },
+      unitName: { type: Sequelize.STRING },
+      shopContact: { type: Sequelize.STRING},
+      occupancyStatus:{ type: Sequelize.STRING }, 
+      floorLevel:{ type: Sequelize.STRING },
+      unitOwnership:{ type: Sequelize.STRING },
+      rent:{ type: Sequelize.STRING },
+      unitUse:{ type: Sequelize.STRING },
+      user_id: { type: Sequelize.INTEGER},
+      remarks:{ type: Sequelize.STRING },
+
       createdAt: {
         allowNull: true,
         type: Sequelize.DATE

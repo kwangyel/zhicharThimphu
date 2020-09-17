@@ -22,7 +22,7 @@ class buildingController{
             return util.send(res)
         }catch(err){
             console.log(err)
-            util.setError(400,"Error")
+            util.setError(200,"Error")
             return util.send(res)
         }
     }
@@ -42,7 +42,7 @@ class buildingController{
             return util.send(res)
         }catch(err){
             console.log(err)
-            util.setError(400,"Error")
+            util.setError(200,"Error")
             return util.send(res)
         }
     }
@@ -75,9 +75,10 @@ class buildingController{
         util.setData(null)
         const data = req.body
         console.log(data)
-        const building_id = req.body.building_id;
+        const structure_id= req.body.structure_id;
+        const user_id = req.body.user_id;
 
-        if(isNaN(building_id)){
+        if(!structure_id || !user_id){
             util.setError(400,"Building id not set")
             return util.send(res)
         }
@@ -94,7 +95,7 @@ class buildingController{
             return util.send(res)
         }catch(err){
             console.log(err)
-            util.setError(400,"Error")
+            util.setError(200,"Error")
             return util.send(res)
         }
     }

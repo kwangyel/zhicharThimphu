@@ -16,6 +16,17 @@ class structureService{
             throw err
         }
     }
+    static async getStructure(sid){
+        try{
+            const str = database.Structure.findOne({
+                where:{id:sid}
+            })
+            return str
+        }catch(err){
+            throw err
+        }
+    }
+
     static async getStructureInZone(zoneid){
         try{
             const structures= database.Structure.findAll({

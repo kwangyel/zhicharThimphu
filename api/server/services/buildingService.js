@@ -4,7 +4,7 @@ class buildingService{
     static async getBuildingWithBid(bid){
         try{
             const buildings = database.Building.findAll({
-                where:{building_id : Number(bid)}
+                where:{structure_id: Number(bid)}
             })
             return buildings
         }catch(err){

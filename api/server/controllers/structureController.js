@@ -21,6 +21,23 @@ class structureController{
             return util.send(res)
         }
     }
+    static async getStructre(req,res){
+        const {sid} = req.params
+        try{
+            const str = await structureService.getStructure(sid)
+            if(str.length){
+                util.setSuccess(200,"got str")
+                util.setData(buildings)
+                return util.send(res)
+            }
+            util.setFailure(200,"No record found")
+            return util.send(res)
+        }catch(err){
+            console.log(err)
+            util.setError(400,"Error")
+            return util.send(res)
+        }
+    }
 
     static async getStructureJson(req,res){
         const {zoneid} = req.params
