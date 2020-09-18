@@ -16,6 +16,22 @@ class structureService{
             throw err
         }
     }
+
+    static async markProgress(bid){
+        try{
+            const str = database.Structure.findOne( { where: { id: bid} });
+            if(str){
+                const updatedstr = database.Structure.update(
+                    {status:"PROGRESS"},
+                    {where:{id:bid}}
+                ) 
+                return updatedstr
+            }
+            return null
+        }catch(err){
+            throw err
+        }
+    }
     static async getStructure(sid){
         try{
             const str = database.Structure.findOne({

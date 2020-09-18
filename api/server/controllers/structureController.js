@@ -21,6 +21,25 @@ class structureController{
             return util.send(res)
         }
     }
+    
+    static async markProgress(req,res){
+        util.setData(null)
+        const {id} = req.params
+        try{
+            const building = await structureService.markProgress(id)
+            if(building){
+                util.setSuccess(200,"Strcutre marked progress")
+                return util.send(res)
+            }
+            util.setFailure(200,"Cannot mark complete")
+            return util.send(res)
+        }catch(err){
+            console.log(err)
+            util.setError(400,"Error")
+            return util.send(res)
+        }
+    }
+
     static async getStructre(req,res){
         const {sid} = req.params
         try{
