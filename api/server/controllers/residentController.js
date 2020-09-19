@@ -28,7 +28,7 @@ class residentController{
     static async createResident(req,res){
         const data = req.body
         const unit_id = req.body.unit_id
-        const building_id = req.body.building_id
+        const building_id = req.body.structure_id
         util.setData(null)
 
         if(!building_id || !unit_id){

@@ -8,7 +8,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      building_id:{type: Sequelize.INTEGER},
+      structure_id:{type: Sequelize.INTEGER},
       unit_id:{ type: Sequelize.INTEGER },
       headHousehold: { type: Sequelize.STRING },
       contactNumberHead: { type: Sequelize.STRING },
