@@ -8,7 +8,10 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      building_id:{
+      structure_id:{
+        type: Sequelize.INTEGER
+      },
+      user_id:{
         type: Sequelize.INTEGER
       },
       schoolName:{
@@ -27,6 +30,9 @@ module.exports = {
         type: Sequelize.STRING
       },
       studentsFemale:{
+        type: Sequelize.STRING
+      },
+      vehicles:{
         type: Sequelize.STRING
       },
       createdAt: {

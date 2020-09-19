@@ -15,7 +15,7 @@ class buildingService{
     static async getABuilding(id){
         try{
             const building = database.Building.findOne({
-                where:{id:Number(id)}
+                where:{structure_id:Number(id)}
             })
             return building
         }catch(err){

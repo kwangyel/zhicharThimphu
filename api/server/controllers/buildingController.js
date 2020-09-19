@@ -12,7 +12,7 @@ class buildingController{
         util.setData(null)
 
         try{
-            const buildings = await buildingService.getBuildingwithBid(bid)
+            const buildings = await buildingService.getBuildingWithBid(bid)
             if(buildings.length){
                 util.setSuccess(200,"Got buildings")
                 util.setData(buildings)

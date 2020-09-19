@@ -1,7 +1,7 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Unit = sequelize.define('Unit', {
-    building_id:DataTypes.INTEGER,
+    structure_id:DataTypes.INTEGER,
     unitNumber:DataTypes.STRING,
     unitName: DataTypes.STRING,
     shopContact:DataTypes.STRING,

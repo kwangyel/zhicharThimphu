@@ -4,7 +4,7 @@ class unitService{
     static async getUnitBuilding(bid){
         try{
             const unit = database.Unit.findAll({
-                where:{building_id:Number(bid)}
+                where:{structure_id:Number(bid)}
             })
             return unit 
         }catch(err){

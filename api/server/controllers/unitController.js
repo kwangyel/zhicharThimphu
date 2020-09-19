@@ -47,13 +47,12 @@ class unitController{
 
     static async createUnit(req,res){
         const data = req.body
-        const building_id= req.body.building_id
-        const unitNumber = req.body.unitNumber
+        const building_id= req.body.structure_id;
         const user_id = req.body.user_id
 
         util.setData(null)
 
-        if(!building_id || !unitNumber  || !user_id){
+        if(!building_id || !user_id){
             util.setError(200,"Building not set")
             return util.send(res)
         }

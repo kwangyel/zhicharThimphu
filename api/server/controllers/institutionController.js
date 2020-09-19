@@ -26,7 +26,7 @@ class institutionController{
 
     static async createInstitution(req,res){
         const data = req.body
-        const building_id = req.body.building_id
+        const building_id = req.body.structure_id;
         util.setData(null)
 
         if(!building_id){
