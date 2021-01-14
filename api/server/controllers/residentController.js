@@ -25,6 +25,25 @@ class residentController{
         }
     }
 
+    static async getResidentInAttic(req,res){
+        util.setData(null)
+	const {zoneid} = req.params;
+        try{
+            const resident = await residentService.getResidentInAttic(zoneid); 
+            if(resident.length){
+                util.setSuccess(200,"Got households")
+                util.setData(resident)
+                return util.send(res)
+            }
+            util.setFailure(200,"No record found")
+            return util.send(res)
+        }catch(err){
+            console.log(err)
+            util.setError(400,"Error")
+            return util.send(res)
+        }
+    }
+
     static async createResident(req,res){
         const data = req.body
         const unit_id = req.body.unit_id

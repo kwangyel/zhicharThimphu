@@ -40,13 +40,13 @@ class structureController{
         }
     }
 
-    static async getStructre(req,res){
+    static async getStructure(req,res){
         const {sid} = req.params
         try{
-            const str = await structureService.getStructure(sid)
-            if(str.length){
+            const structure = await structureService.getStructure(sid)
+            if(structure){
                 util.setSuccess(200,"got str")
-                util.setData(buildings)
+                util.setData(structure)
                 return util.send(res)
             }
             util.setFailure(200,"No record found")

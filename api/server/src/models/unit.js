@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     structure_id:DataTypes.INTEGER,
     unitNumber:DataTypes.STRING,
     unitName: DataTypes.STRING,
-    shopContact:DataTypes.STRING,
+    contact:DataTypes.STRING,
     occupancyStatus:DataTypes.STRING,
     floorLevel:DataTypes.STRING,
     unitOwnership:DataTypes.STRING,
