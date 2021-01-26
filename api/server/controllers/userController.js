@@ -31,6 +31,7 @@ class userController{
                                 token:token,
                                 username:userd['username'],
                                 id:userd['id'],
+				isadmin:userd['isadmin'],
                             })
                             return util.send(res)
                     }else{

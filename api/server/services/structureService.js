@@ -35,7 +35,7 @@ class structureService{
     static async getStructure(sid){
         try{
             const str = database.Structure.findOne({
-                where:{id:sid}
+                where:{id:Number(sid)}
             })
             return str
         }catch(err){

@@ -37,13 +37,9 @@ class imageController{
             return util.send(res)
         }
         try{
-            const building = await buildingService.getABuilding(building_id)
-            if(!building){
-               util.setError(400,"building not valid") 
-               return util.send(res)
-            }
             //upload file to server
-            let filename = "uploads/building_id_"+building_id+".jpg"
+		const name = Date.now();
+            let filename = "uploads/"+name+"building_id_"+building_id+".jpg"
 
             let m = dataUrl.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/)
             let b = Buffer.from(m[2],'base64')
