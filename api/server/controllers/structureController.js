@@ -40,6 +40,26 @@ class structureController{
         }
     }
 
+    static async setRemarks(req,res){
+        util.setData(null)
+        const remarks= req.remarks
+        const bid = req.bid
+
+        try{
+            const building = await structureService.setRemarks(bid,remarks)
+            if(building){
+                util.setSuccess(200,"Strcutre marked remarks")
+                return util.send(res)
+            }
+            util.setFailure(200,"Cannot mark complete")
+            return util.send(res)
+        }catch(err){
+            console.log(err)
+            util.setError(400,"Error")
+            return util.send(res)
+        }
+    }
+
     static async getStructure(req,res){
         const {sid} = req.params
         try{

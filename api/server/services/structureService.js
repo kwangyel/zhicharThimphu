@@ -63,5 +63,21 @@ class structureService{
         }
     }
 
+    static async setRemarks(bid,remarks){
+        try{
+            const str = database.Structure.findOne( { where: { id: bid} });
+            if(str){
+                const updatedstr = database.Structure.update(
+                    {remarks:remarks},
+                    {where:{id:bid}}
+                ) 
+                return updatedstr
+            }
+            return null
+        }catch(err){
+            throw err
+        }
+    }
+
 }
 export default structureService;
