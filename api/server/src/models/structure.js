@@ -4,6 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     building_number: DataTypes.INTEGER,
     lat: DataTypes.DOUBLE,
     lng: DataTypes.DOUBLE,
+    remarks: DataTypes.STRING,
     status: DataTypes.STRING,
     sub_zone_id: DataTypes.INTEGER
   }, {});
