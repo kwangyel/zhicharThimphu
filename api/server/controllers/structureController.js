@@ -42,8 +42,8 @@ class structureController{
 
     static async setRemarks(req,res){
         util.setData(null)
-        const remarks= req.remarks
-        const bid = req.bid
+        const remarks= req.body.remarks
+        const bid = req.body.bid
 
         try{
             const building = await structureService.setRemarks(bid,remarks)
